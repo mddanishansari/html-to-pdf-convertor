@@ -1,4 +1,4 @@
-package org.nvest.sample.pdf_generator
+package org.nvest.sample.html_to_pdf
 
 import android.Manifest
 import android.content.ActivityNotFoundException
@@ -10,9 +10,8 @@ import android.os.Environment
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
-import androidx.core.view.isVisible
 import org.nvest.html_to_pdf.HtmlToPdfConvertor
-import org.nvest.sample.pdf_generator.databinding.ActivityMainBinding
+import org.nvest.sample.html_to_pdf.databinding.ActivityMainBinding
 import java.io.File
 
 class MainActivity : AppCompatActivity() {

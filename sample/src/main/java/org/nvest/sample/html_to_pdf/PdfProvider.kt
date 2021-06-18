@@ -1,4 +1,4 @@
-package org.nvest.sample.pdf_generator
+package org.nvest.sample.html_to_pdf
 
 import androidx.core.content.FileProvider
 

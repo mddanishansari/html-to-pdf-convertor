@@ -10,6 +10,7 @@ import android.os.Environment
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
+import androidx.core.view.isVisible
 import org.nvest.html_to_pdf.HtmlToPdfConvertor
 import org.nvest.sample.html_to_pdf.databinding.ActivityMainBinding
 import java.io.File

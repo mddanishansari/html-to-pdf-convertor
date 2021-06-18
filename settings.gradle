@@ -1,0 +1,3 @@
+rootProject.name = "pdf-generator"
+include ':sample'
+include ':pdf-generator'

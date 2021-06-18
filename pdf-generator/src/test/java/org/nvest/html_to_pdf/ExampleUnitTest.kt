@@ -1,4 +1,4 @@
-package org.nvest.pdf_generator
+package org.nvest.html_to_pdf
 
 import org.junit.Test
 

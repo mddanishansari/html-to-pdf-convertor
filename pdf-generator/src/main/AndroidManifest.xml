@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.nvest.pdf_generator">
+    package="org.nvest.html_to_pdf">
 
 </manifest>

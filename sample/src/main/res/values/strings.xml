@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">pdf-generator</string>
+    <string name="app_name">Html to Pdf</string>
     <string name="convert_html_to_pdf">Convert Html to Pdf</string>
 </resources>

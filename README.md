@@ -34,6 +34,12 @@ Create an instance of `HtmlToPdfConvertor` class
 val htmlToPdfConvertor = HtmlToPdfConvertor(context)
 ```
 
+Set optional base URL
+```kotlin
+htmlToPdfConvertor.setBaseUrl("file:///android_asset/images/") // is null by default
+```
+
+
 Start the conversion by calling `convert` function
 
 ```kotlin

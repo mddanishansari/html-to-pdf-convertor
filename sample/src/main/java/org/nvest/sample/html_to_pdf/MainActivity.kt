@@ -27,6 +27,8 @@ class MainActivity : AppCompatActivity() {
         // initialize HtmlToPdfConvertor
         htmlToPdfConvertor = HtmlToPdfConvertor(this)
 
+        // set base url
+        htmlToPdfConvertor.setBaseUrl("file:///android_asset/images/")
 
         binding.btnConvert.setOnClickListener {
             if (shouldAskPermission()) {
@@ -135,6 +137,8 @@ class MainActivity : AppCompatActivity() {
         
         <body>
         
+            <p>Image from assets</p>
+            <img src='sample_image.png' alt='sample image' width='200'/>
             <h1>My First Heading</h1>
         
             <p>My first paragraph.</p>

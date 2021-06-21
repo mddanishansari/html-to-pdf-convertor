@@ -56,4 +56,4 @@ htmlToPdfConvertor.convert(
 
 > Storage permission is required to save pdf file on storage
 
-Checkout [sample code](https://github.com/nvest-solutions/html-to-pdf-convertor/blob/4f4cf6a7793ba989a8d78b27eea241a5867d2327/sample/src/main/java/org/nvest/sample/html_to_pdf/MainActivity.kt#L62)
+Checkout [sample code](https://github.com/nvest-solutions/html-to-pdf-convertor/blob/4f4cf6a7793ba989a8d78b27eea241a5867d2327/sample/src/main/java/org/nvest/sample/html_to_pdf/MainActivity.kt#L62), also sample [HTML](assets/html_input.html) and [PDF](assets/pdf_output.pdf)

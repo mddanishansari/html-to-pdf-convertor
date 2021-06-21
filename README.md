@@ -1,5 +1,5 @@
-# Html to Pdf Convertor
-Does what it says
+# HTML to PDF Convertor
+A simple HTML to PDF convertor for Android
 
 ## Download
 

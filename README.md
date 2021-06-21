@@ -1,7 +1,33 @@
 # Html to Pdf Convertor
 Does what it says
 
-### Usage
+## Download
+
+Add `mavenCentral()` repository in project's `build.gradle`
+
+```gradle
+allprojects {
+    repositories {
+        // Possibly other repositories
+        mavenCentral()
+    }
+}
+```
+
+Add dependency in module's `build.gradle`
+
+```gradle
+dependencies {
+    // Possibly other dependencies
+    // Replace the <latest-version> with actual latest version
+    implementation 'io.github.nvest-solutions:html-to-pdf-convertor:<latest-version>'
+}
+```
+<a href="https://repo1.maven.org/maven2/io/github/nvest-solutions/html-to-pdf-convertor/" target="_blank">
+  <img src="https://img.shields.io/maven-central/v/io.github.nvest-solutions/html-to-pdf-convertor?label=latest-version" />
+</a>
+
+## Usage
 
 Create an instance of `HtmlToPdfConvertor` class
 ```kotlin

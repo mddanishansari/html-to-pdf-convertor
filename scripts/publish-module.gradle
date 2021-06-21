@@ -1,0 +1,93 @@
+apply plugin: 'maven-publish'
+apply plugin: 'signing'
+
+task androidSourcesJar(type: Jar) {
+    archiveClassifier.set('sources')
+    if (project.plugins.findPlugin("com.android.library")) {
+        // For Android libraries
+        from android.sourceSets.main.java.srcDirs
+        from android.sourceSets.main.kotlin.srcDirs
+    } else {
+        // For pure Kotlin libraries, in case you have them
+        from sourceSets.main.java.srcDirs
+        from sourceSets.main.kotlin.srcDirs
+    }
+}
+
+tasks.withType(Javadoc).all {
+    enabled = false
+}
+
+task javadoc(type: Javadoc) {
+    failOnError false
+    options.addStringOption('Xdoclint:none', '-quiet')
+    options.addStringOption('encoding', 'UTF-8')
+    options.addStringOption('charSet', 'UTF-8')
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    from javadoc.destinationDir
+    archiveClassifier.set("javadoc")
+}
+
+artifacts {
+    archives javadocJar
+    archives androidSourcesJar
+}
+
+group = PUBLISH_GROUP_ID
+version = PUBLISH_VERSION
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                groupId PUBLISH_GROUP_ID
+                artifactId PUBLISH_ARTIFACT_ID
+                version PUBLISH_VERSION
+                if (project.plugins.findPlugin("com.android.library")) {
+                    from components.release
+                } else {
+                    from components.java
+                }
+
+                artifact androidSourcesJar
+                artifact javadocJar
+
+                pom {
+                    name = PUBLISH_ARTIFACT_ID
+                    description = 'HTML to PDF convertor for Android'
+                    url = 'https://github.com/nvest-solutions/html-to-pdf-convertor'
+                    licenses {
+                        license {
+                            name = 'Apache License 2.0'
+                            url = 'https://github.com/nvest-solutions/html-to-pdf-convertor/blob/main/LICENSE'
+                        }
+                    }
+                    developers {
+                        developer {
+                            id = 'danishansari'
+                            name = 'Danish Ansari'
+                            email = 'ansarid567@gmail.com'
+                        }
+                    }
+                    scm {
+                        connection = 'scm:git:github.com/nvest-solutions/html-to-pdf-convertor.git'
+                        developerConnection = 'scm:git:ssh://github.com/nvest-solutions/html-to-pdf-convertor.git'
+                        url = 'https://github.com/nvest-solutions/html-to-pdf-convertor/tree/main'
+                    }
+                }
+            }
+        }
+    }
+}
+
+ext["signing.keyId"] = rootProject.ext["signing.keyId"]
+ext["signing.password"] = rootProject.ext["signing.password"]
+ext["signing.secretKeyRingFile"] = rootProject.ext["signing.secretKeyRingFile"]
+
+signing {
+    sign publishing.publications
+}

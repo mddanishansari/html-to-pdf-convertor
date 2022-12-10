@@ -59,11 +59,11 @@ afterEvaluate {
                 pom {
                     name = PUBLISH_ARTIFACT_ID
                     description = 'HTML to PDF convertor for Android'
-                    url = 'https://github.com/nvest-solutions/html-to-pdf-convertor'
+                    url = 'https://github.com/mddanishansari/html-to-pdf-convertor'
                     licenses {
                         license {
                             name = 'Apache License 2.0'
-                            url = 'https://github.com/nvest-solutions/html-to-pdf-convertor/blob/main/LICENSE'
+                            url = 'https://github.com/mddanishansari/html-to-pdf-convertor/blob/main/LICENSE'
                         }
                     }
                     developers {
@@ -74,9 +74,9 @@ afterEvaluate {
                         }
                     }
                     scm {
-                        connection = 'scm:git:github.com/nvest-solutions/html-to-pdf-convertor.git'
-                        developerConnection = 'scm:git:ssh://github.com/nvest-solutions/html-to-pdf-convertor.git'
-                        url = 'https://github.com/nvest-solutions/html-to-pdf-convertor/tree/main'
+                        connection = 'scm:git:github.com/mddanishansari/html-to-pdf-convertor.git'
+                        developerConnection = 'scm:git:ssh://github.com/mddanishansari/html-to-pdf-convertor.git'
+                        url = 'https://github.com/mddanishansari/html-to-pdf-convertor/tree/main'
                     }
                 }
             }
@@ -89,5 +89,10 @@ ext["signing.password"] = rootProject.ext["signing.password"]
 ext["signing.secretKeyRingFile"] = rootProject.ext["signing.secretKeyRingFile"]
 
 signing {
+    useInMemoryPgpKeys(
+            rootProject.ext["signing.keyId"],
+            rootProject.ext["signing.key"],
+            rootProject.ext["signing.password"],
+    )
     sign publishing.publications
 }

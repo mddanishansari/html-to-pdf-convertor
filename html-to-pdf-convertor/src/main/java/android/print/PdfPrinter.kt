@@ -10,7 +10,6 @@ import java.io.File
 import java.io.IOException
 
 class PdfPrinter(private val printAttributes: PrintAttributes) {
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     fun generate(
         printAdapter: PrintDocumentAdapter,
         path: File,

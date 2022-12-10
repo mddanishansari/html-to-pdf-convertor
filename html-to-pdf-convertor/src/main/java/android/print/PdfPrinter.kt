@@ -1,11 +1,9 @@
 package android.print
 
-import android.os.Build
 import android.os.CancellationSignal
 import android.os.ParcelFileDescriptor
 import android.print.PrintDocumentAdapter.LayoutResultCallback
 import android.print.PrintDocumentAdapter.WriteResultCallback
-import androidx.annotation.RequiresApi
 import java.io.File
 import java.io.IOException
 

@@ -1,4 +1,4 @@
-package org.nvest.html_to_pdf
+package io.github.mddanishansari.html_to_pdf
 
 import android.content.Context
 import android.os.Build

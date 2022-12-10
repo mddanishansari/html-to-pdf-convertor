@@ -38,7 +38,7 @@ android {
     lintOptions {
         abortOnError false
     }
-    namespace 'org.nvest.html_to_pdf'
+    namespace 'io.github.mddanishansari.html_to_pdf'
 }
 
 dependencies {

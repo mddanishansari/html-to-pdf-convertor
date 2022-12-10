@@ -1,4 +1,4 @@
-package org.nvest.html_to_pdf
+package io.github.mddanishansari.html_to_pdf
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("org.nvest.pdf_generator.test", appContext.packageName)
+        assertEquals("io.github.mddanishansari.html_to_pdf.test", appContext.packageName)
     }
 }

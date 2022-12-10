@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Pdfgenerator">
         <activity
-            android:name="org.nvest.sample.html_to_pdf.MainActivity"
+            android:name="io.github.mddanishansari.sample.html_to_pdf.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +21,7 @@
         </activity>
 
         <provider
-            android:name="org.nvest.sample.html_to_pdf.PdfProvider"
+            android:name="io.github.mddanishansari.sample.html_to_pdf.PdfProvider"
             android:authorities="${applicationId}.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">

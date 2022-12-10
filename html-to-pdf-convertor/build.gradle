@@ -4,8 +4,8 @@ plugins {
 }
 
 ext {
-    PUBLISH_GROUP_ID = "io.github.nvest-solutions"
-    PUBLISH_VERSION = "1.0.0"
+    PUBLISH_GROUP_ID = "io.github.mddanishansari"
+    PUBLISH_VERSION = System.getProperty("version")
     PUBLISH_ARTIFACT_ID = "html-to-pdf-convertor"
 }
 

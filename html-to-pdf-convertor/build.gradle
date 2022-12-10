@@ -13,7 +13,6 @@ apply from: "${rootDir}/scripts/publish-module.gradle"
 
 android {
     compileSdkVersion 30
-    buildToolsVersion "30.0.3"
 
     defaultConfig {
         minSdkVersion 19

@@ -14,9 +14,14 @@ import java.io.File
 class HtmlToPdfConvertor(private val context: Context) {
 
     private var baseUrl: String? = null
+    private var enableJavascript: Boolean? = null
 
     fun setBaseUrl(baseUrl: String) {
         this.baseUrl = baseUrl
+    }
+
+    fun setJavaScriptEnabled(flag: Boolean) {
+        this.enableJavascript = flag
     }
 
     @UiThread
@@ -36,6 +41,9 @@ class HtmlToPdfConvertor(private val context: Context) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 pdfWebView.settings.safeBrowsingEnabled = false
             }
+
+            // set webview enable/ disable javascript property
+            enableJavascript?.let { pdfWebView.settings.javaScriptEnabled = it }
 
             // job name
             val jobName = Math.random().toString()

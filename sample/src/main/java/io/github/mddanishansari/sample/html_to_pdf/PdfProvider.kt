@@ -1,4 +1,4 @@
-package org.nvest.sample.html_to_pdf
+package io.github.mddanishansari.sample.html_to_pdf
 
 import androidx.core.content.FileProvider
 

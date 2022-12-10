@@ -33,6 +33,10 @@ android {
     buildFeatures {
         viewBinding true
     }
+    lintOptions {
+        abortOnError false
+    }
+    namespace 'org.nvest.sample.html_to_pdf'
 }
 
 dependencies {
